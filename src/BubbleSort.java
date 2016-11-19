@@ -3,7 +3,7 @@
  */
 public class BubbleSort {
 
-    static LinkedList sort(LinkedList list) {
+    LinkedList sort(LinkedList list) {
         int R = list.length - 2;
         boolean swapped = true;
         while(R >= 0 && swapped) {
