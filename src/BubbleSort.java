@@ -13,6 +13,21 @@ public class BubbleSort {
         System.out.println(test.toString());
         test = sort(test);
         System.out.println(test.toString());
+
+        LinkedList testComp = new LinkedList();
+
+        testComp.addNode(1);
+        testComp.addNode(2);
+        testComp.addNode(3);
+
+        LinkedList.Node previous = testComp.getFirst();
+        LinkedList.Node current = testComp.getFirst().getNext();
+        LinkedList.Node next = testComp.getFirst().getNext().getNext();
+
+        System.out.println(testComp.toString());
+        testComp.swapComp(previous, current, next);
+        System.out.println(testComp.toString());
+
     }
 
     static LinkedList sort(LinkedList list) {

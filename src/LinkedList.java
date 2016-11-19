@@ -37,17 +37,23 @@ public class LinkedList {
     int getValueAt(int position) {
         if (position > length)
             return -1;
-        Node temp = first;
+        Node current = first;
         for (int i = 0; i < position; i++) {
-            temp = temp.getNext();
+            current = current.getNext();
         }
-        return getValue(temp);
+        return getValue(current);
     }
 
     void swap(Node node1, Node node2) {
         int temp = node1.getValue();
         node1.setValue(node2.getValue());
         node2.setValue(temp);
+    }
+
+    void swapComp(Node previous, Node current, Node next) {
+        previous.setNext(next);
+        current.setNext(next.getNext());
+        next.setNext(current);
     }
 
     @Override
@@ -81,6 +87,10 @@ public class LinkedList {
 
         public Node getNext() {
             return next;
+        }
+
+        public void setNext(Node next) {
+            this.next = next;
         }
     }
 }
