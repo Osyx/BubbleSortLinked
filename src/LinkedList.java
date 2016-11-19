@@ -5,8 +5,7 @@ public class LinkedList {
     private Node first;
     public int length = 0;
 
-    LinkedList() {
-    }
+    LinkedList() {}
 
     void addFirst(int value) {
         this.first = new Node(value);
@@ -71,15 +70,15 @@ public class LinkedList {
             this.value = value;
         }
 
-        public int getValue() {
+        int getValue() {
             return value;
         }
 
-        public void setValue(int value) {
+        void setValue(int value) {
             this.value = value;
         }
 
-        public Node getNext() {
+        Node getNext() {
             return next;
         }
     }
