@@ -4,7 +4,7 @@
 public class BubbleSort {
 
     LinkedList sort(LinkedList list) {
-        int R = list.length - 2;
+        int R = list.getLength() - 2;
         boolean swapped = true;
         while(R >= 0 && swapped) {
             LinkedList.Node temp = list.getFirst();

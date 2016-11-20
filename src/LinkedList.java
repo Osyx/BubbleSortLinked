@@ -3,20 +3,23 @@
  */
 public class LinkedList {
     private Node first;
-    public int length = 0;
+    private int length = 0;
 
-    LinkedList() {}
+    // Contructor.
+    public LinkedList() {}
 
-    void addFirst(int value) {
+    private void addFirst(int value) {
         this.first = new Node(value);
         length = 1;
     }
 
-    Node getFirst() {
+    // Get first node in list.
+    public Node getFirst() {
         return first;
     }
 
-    void addNode(int value) {
+    // Add a node to the list, if there are none create the first.
+    public void addNode(int value) {
         if (first == null)
             addFirst(value);
         else {
@@ -29,11 +32,15 @@ public class LinkedList {
         }
     }
 
-    int getValue(Node node) {
+    // Not needed but in an actual implementation, it is good to have.
+    // Get the value of a node.
+    public int getValue(Node node) {
         return node.getValue();
     }
 
-    int getValueAt(int position) {
+    // Not needed but in an actual implementation, it is good to have.
+    // Get the value of the node at the given position.
+    public int getValueAt(int position) {
         if (position > length)
             return -1;
         Node temp = first;
@@ -43,12 +50,19 @@ public class LinkedList {
         return getValue(temp);
     }
 
-    void swap(Node node1, Node node2) {
+    // Swap the value of two nodes.
+    public void swap(Node node1, Node node2) {
         int temp = node1.getValue();
         node1.setValue(node2.getValue());
         node2.setValue(temp);
     }
 
+    // Get the length of the list.
+    public int getLength() {
+        return length;
+    }
+
+    // toString implementation.
     @Override
     public String toString() {
         String result = "";
@@ -62,23 +76,26 @@ public class LinkedList {
         return result;
     }
 
-    class Node {
+    // The node class
+    public class Node {
         private int value = 0;
         private Node next;
 
-        Node(int value) {
+        private Node(int value) {
             this.value = value;
         }
 
-        int getValue() {
+        // Get the value of the node.
+        public int getValue() {
             return value;
         }
 
-        void setValue(int value) {
+        private void setValue(int value) {
             this.value = value;
         }
 
-        Node getNext() {
+        // Get the next node.
+        public Node getNext() {
             return next;
         }
     }
