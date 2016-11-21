@@ -8,16 +8,18 @@ public class Driver {
         BubbleSort bubbleSort = new BubbleSort();
         LinkedList test = new LinkedList();
         InversionCount count = new InversionCount();
+        CountingInversions countInv = new CountingInversions();
         Random rndm = new Random();
         for (int i = 0; i < 10; i++) {
             test.addNode(rndm.nextInt(10));
         }
-        System.out.println(test.toString());
+        //System.out.println(test.toString());
         //test = bubbleSort.sort(test);
-        System.out.println(test.toString());
-        System.out.println("counter: " + CountingInversions.sort(test));
+        //System.out.println(test.toString());
+        System.out.println("counter1: " + countInv.sort(test));
+        System.out.println("counter2: " + count.sort(test));
         System.out.println(bubbleSort.sort(test));
-
+/*
         LinkedList test2 = new LinkedList();
         test2.addNode(1);
         test2.addNode(2);
@@ -26,6 +28,6 @@ public class Driver {
         test2.addNode(5);
         test2.addNode(0);
         System.out.println(count.sort(test));
-        System.out.println("counter: " + CountingInversions.sort(test2));
+        System.out.println("counter: " + CountingInversions.sort(test2));*/
     }
 }
