@@ -1,15 +1,9 @@
-public final class CountingInversions {
+class CountingInversions {
+    private int[] temp;
 
-    private CountingInversions() {}
+    public CountingInversions() {}
 
-    /**
-     * Returns the number of inversions in the input array
-     *
-     * @param a the input array
-     * @return  the number of inversions.
-     */
-
-    public static int sort(LinkedList list) {
+    public int sort(LinkedList list) {
         int[] arr = new int[list.getLength()];
         LinkedList.Node temp = list.getFirst();
 
@@ -17,36 +11,28 @@ public final class CountingInversions {
             arr[i] = temp.getValue();
             temp = temp.getNext();
         }
-
-        return countInversions(arr);
+        this.temp = new int[arr.length];
+        return mergeSort(arr, 0, arr.length);
     }
 
-    public static int countInversions(int[] a) {
-        return mergeSort(a, 0, a.length);
-    }
-
-    private static int mergeSort (int[] a, int low, int high) {
+    private int mergeSort (int[] a, int low, int high) {
         if (low == high - 1) return 0;
-
         int mid = (low + high)/2;
-
         return mergeSort (a, low, mid) + mergeSort (a, mid, high) + merge (a, low, mid, high);
     }
 
-    private static int merge (int[] a, int low, int mid, int high) {
+    private int merge (int[] a, int low, int mid, int high) {
         int count = 0;
-        int[] temp = new int[a.length];
 
-        for (int i = low, lb = low, hb = mid; i < high; i++) {
+        for (int i = low, lo = low, hi = mid; i < high; i++) {
 
-            if (hb >= high || lb < mid && a[lb] <= a[hb]) {
-                temp[i]  = a[lb++];
+            if (hi >= high || lo < mid && a[lo] <= a[hi]) {
+                temp[i]  = a[lo++];
             } else {
-                count = count + (mid - lb);
-                temp[i]  = a[hb++];
+                count = count + (mid - lo);
+                temp[i]  = a[hi++];
             }
         }
-
         System.arraycopy(temp, low, a, low, high - low);
 
         return count;
