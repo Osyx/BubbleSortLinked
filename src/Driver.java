@@ -11,8 +11,8 @@ public class Driver {
         for (int i = 0; i < 10; i++) {
             test.addNode(rndm.nextInt(10));
         }
-        System.out.println(test.toString());
+        System.out.println("Unsorted:\n" + test.toString());
         test = bubbleSort.sort(test);
-        System.out.println(test.toString());
+        System.out.println("Sorted:\n" + test.toString());
     }
 }
