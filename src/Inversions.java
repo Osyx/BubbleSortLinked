@@ -1,9 +1,7 @@
-class CountingInversions {
+class Inversions {
     private int[] temp;
 
-    public CountingInversions() {}
-
-    public int sort(LinkedList list) {
+    public int count(LinkedList list) {
         int[] arr = new int[list.getLength()];
         LinkedList.Node temp = list.getFirst();
 

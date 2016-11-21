@@ -3,7 +3,7 @@
  */
 public class BubbleSort {
 
-    int sort(LinkedList a) {
+    LinkedList sort(LinkedList a) {
         int R = a.getLength() - 2;
         int count = 0;
         boolean swapped = true;
@@ -20,6 +20,7 @@ public class BubbleSort {
             }
             R = R - 1;
         }
-        return count;
+        System.out.println("Bubble count swapped " + count + " times.");
+        return a;
     }
 }
