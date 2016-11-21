@@ -5,9 +5,6 @@ public class LinkedList {
     private Node first;
     private int length = 0;
 
-    // Contructor.
-    public LinkedList() {}
-
     private void addFirst(int value) {
         this.first = new Node(value);
         length = 1;
