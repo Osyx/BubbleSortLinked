@@ -1,3 +1,6 @@
+/**
+ * Created by Oscar on 16-11-19.
+ */
 class Inversions {
     private int[] temp;
 
